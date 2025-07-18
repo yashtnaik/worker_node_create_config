@@ -9,6 +9,12 @@ resource "aws_instance" "terraform-instance" {
     instance_type = var.instance_type
     key_name = var.key_name
 
+    root_block_device {
+        volume_type           = "gp3"
+        volume_size           = 12
+        delete_on_termination = true
+        }
+
     connection {
       type = "ssh"
       private_key = file("key/yashtnaik-instances-3.pem")
