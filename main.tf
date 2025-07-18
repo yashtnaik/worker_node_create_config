@@ -11,7 +11,7 @@ resource "aws_instance" "terraform-instance" {
 
     connection {
       type = "ssh"
-      private_key = file("key/yashtnaik-instance-3.pem")
+      private_key = file("key/yashtnaik-instances-3.pem")
       user = "ubuntu"
       agent = false
       host = self.public_ip
